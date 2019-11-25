@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update</title>
+</head>
+<body>
+    <form method = 'POST' action = '/update/<%= updateCar%>?_method=PUT'>
+    <input type = 'text' name = 'newCar' placeholder="update car">
+    <input type = 'submit' value = 'Update'>
+    </form>
+</body>
+</html>
