@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User details</title>
+</head>
+<body>
+    <h1>Enter User details</h1>
+    <form action="/" method="POST">
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="tel" name="phone" placeholder="Phone">
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <h1>Users List:</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%data.forEach((indUser)=>{%>
+                    <tr>
+                        <td><%=indUser.name%></td>
+                        <td><%=indUser.email%></td>
+                        <td><%=indUser.phone%></td>
+                        <td><a href="/update/<%=indUser._id%>">Update</a></td>
+                        <td>
+                            <form action="/delete/<%=indUser._id%>?_method=DELETE" method="POST">
+                                <button>Delete</button>
+                            </form>               
+         </tr>                    
+                <%})%>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>
